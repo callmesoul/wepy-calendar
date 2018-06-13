@@ -13,11 +13,8 @@
 
 ## 使用
 
-### 安装组件
-```
-npm install wepy-calendar --save
-```
-
+### 拷贝到components里
+把 calender.wpy拷贝到组件文件夹里
 ### 引入组件
 ```javascript
 // index.wpy
@@ -26,7 +23,7 @@ npm install wepy-calendar --save
 </template>
 <script>
     import wepy from 'wepy';
-    import wepyCanlendar from 'wepy-calendar';
+    import wepyCanlendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
@@ -36,7 +33,6 @@ npm install wepy-calendar --save
     
 </script>
 ```
-
 ### 自定义参数
 ```javascript
 // index.wpy
@@ -49,8 +45,8 @@ npm install wepy-calendar --save
     ></wepyCanlendar>
 </template>
 <script>
-    import wepy from 'wepy';
-    import wepyCanlendar from 'wepy-calendar';
+    import wepy from 'wepy'
+    import wepyCanlendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
@@ -80,8 +76,6 @@ npm install wepy-calendar --save
     
 </script>
 ```
-
-
 
 
 | 属性/方法   | 必填    |  默认值  |备注|
