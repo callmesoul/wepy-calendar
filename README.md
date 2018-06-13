@@ -42,10 +42,10 @@ npm install wepy-calendar --save
 // index.wpy
 <template>
     <wepyCanlendar 
-        :currentDate.sync="currentDate"//日历当前时间
-        :startDate.sync="startDate"//日历选择器picker的最小时间
-        :endDate.sync="endDate"//日历选择器picker的最大时间
-        :hasIconList.sync="hasIconList"//打卡天数数组
+        :currentDate.sync="currentDate" // 日历当前时间
+        :startDate.sync="startDate" // 日历选择器picker的最小时间
+        :endDate.sync="endDate" // 日历选择器picker的最大时间
+        :hasIconList.sync="hasIconList" // 打卡天数数组
     ></wepyCanlendar>
 </template>
 <script>
@@ -62,10 +62,10 @@ npm install wepy-calendar --save
         }
         
         data = {
-              currentDate:"2017-08-09",
-              startDate:'2017-01-01',
-              endDate:'2018-02-01',
-              hasIconList:[1,2,3,4,10,12,14]
+              currentDate: "2018-08-09",
+              startDate: '2018-01-01',
+              endDate: '2018-02-01',
+              hasIconList:[ '2018-06-01', '2018-06-06', '2018-06-09', '2018-06-10', '2018-06-15' ]
         };  // 页面所需数据均需在这里声明，可用于模板数据绑定
         
         events = {
