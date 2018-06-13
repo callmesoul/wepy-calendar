@@ -187,7 +187,7 @@
       calculateDays(year, month) {
         let days = []
         const thisMonthDays = this.getThisMonthDays(year, month)
-        month = month < 10 ? '0' + month : month
+        month = this.setMonthDouble(month)
         for (let i = 1; i <= thisMonthDays; i++) {
           let day = { day: i, choosed: false }
           let checkDay = year + '-' + month + '-' + (i < 10 ? '0' + i : i)
