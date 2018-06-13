@@ -88,5 +88,4 @@
 | calChangeSelectedDay  | 否      |   (date,e)    |声明组件之间的事件处理函数
 | this.$broadcast("startRenderCalendar");  | 是      |   ‘’    |通知组件可以开始渲染
 
-![toast](http://nowechat.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh_b4c00b84720c_258.jpg)
 
