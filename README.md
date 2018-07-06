@@ -65,8 +65,8 @@
         };  // 页面所需数据均需在这里声明，可用于模板数据绑定
         
         events = {
-              calChangeCurrentDate:function (date,e) {
-                 //日历当前时间改变回调
+              calChangeCurrentMonth:function (date,e) {
+                 //日历当前月份改变回调
               },
               calChangeSelectedDay:function (date,e) {
                 //点击日历选择天回调
@@ -83,8 +83,8 @@
 | currentDate | 否      |   new Date() |日历当前时间|
 | startDate    否      |   null    |日历时间选择picker最小时间|
 | endDate    | 否      |   null    |日历时间选择picker最大时间|
-| hasIconList  | 否      |   []    |日历打入天数组|
-| calChangeCurrentDate  | 否      |   (date,e)    |日历当前时间改变回调
+| hasIconList  | 否      |   []    |日历显示天数组|
+| calChangeCurrentMonth  | 否      |   (date,e)    |日历当前月份改变回调
 | calChangeSelectedDay  | 否      |   (date,e)    |声明组件之间的事件处理函数
 | this.$broadcast("startRenderCalendar");  | 是      |   ‘’    |通知组件可以开始渲染
 
