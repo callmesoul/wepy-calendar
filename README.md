@@ -38,10 +38,10 @@
 // index.wpy
 <template>
     <wepyCanlendar 
-        :currentDate.sync="currentDate" // 日历当前时间
-        :startDate.sync="startDate" // 日历选择器picker的最小时间
-        :endDate.sync="endDate" // 日历选择器picker的最大时间
-        :hasIconList.sync="hasIconList" // 打卡天数数组
+        :currentDate.sync="currentDate" // 日历当前时间 默认为今天
+        :startDate.sync="startDate" // 日历选择器picker的最小时间 默认为3年之前
+        :endDate.sync="endDate" // 日历选择器picker的最大时间 默认为3年之后
+        :hasIconList.sync="hasIconList" // 日历中显示的天数数组
     ></wepyCanlendar>
 </template>
 <script>
