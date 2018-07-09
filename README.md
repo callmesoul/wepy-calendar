@@ -4,7 +4,7 @@
 
 
 ## 说明
-实现方法网上找的，代码比较烂，别介意，第一次写npm模块。我只是一搬运工。
+
 基本实现功能：
 1. 日历显示
 2. 选择时间
@@ -13,11 +13,8 @@
 
 ## 使用
 
-### 安装组件
-```
-npm install wepy-calendar --save
-```
-
+### 拷贝到components里
+把 calender.wpy拷贝到组件文件夹里
 ### 引入组件
 ```javascript
 // index.wpy
@@ -26,7 +23,7 @@ npm install wepy-calendar --save
 </template>
 <script>
     import wepy from 'wepy';
-    import wepyCanlendar from 'wepy-calendar';
+    import wepyCanlendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
@@ -36,21 +33,20 @@ npm install wepy-calendar --save
     
 </script>
 ```
-
 ### 自定义参数
 ```javascript
 // index.wpy
 <template>
     <wepyCanlendar 
-        :currentDate.sync="currentDate"//日历当前时间
-        :startDate.sync="startDate"//日历选择器picker的最小时间
-        :endDate.sync="endDate"//日历选择器picker的最大时间
-        :hasIconList.sync="hasIconList"//打卡天数数组
+        :currentDate.sync="currentDate" // 日历当前时间 默认为今天
+        :startDate.sync="startDate" // 日历选择器picker的最小时间 默认为3年之前
+        :endDate.sync="endDate" // 日历选择器picker的最大时间 默认为3年之后
+        :hasIconList.sync="hasIconList" // 日历中显示的天数数组
     ></wepyCanlendar>
 </template>
 <script>
-    import wepy from 'wepy';
-    import wepyCanlendar from 'wepy-calendar';
+    import wepy from 'wepy'
+    import wepyCanlendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
@@ -62,15 +58,15 @@ npm install wepy-calendar --save
         }
         
         data = {
-              currentDate:"2017-08-09",
-              startDate:'2017-01-01',
-              endDate:'2018-02-01',
-              hasIconList:[1,2,3,4,10,12,14]
+              currentDate: "2018-08-09",
+              startDate: '2018-01-01',
+              endDate: '2018-02-01',
+              hasIconList:[ '2018-06-01', '2018-06-06', '2018-06-09', '2018-06-10', '2018-06-15' ]
         };  // 页面所需数据均需在这里声明，可用于模板数据绑定
         
         events = {
-              calChangeCurrentDate:function (date,e) {
-                 //日历当前时间改变回调
+              calChangeCurrentMonth:function (date,e) {
+                 //日历当前月份改变回调
               },
               calChangeSelectedDay:function (date,e) {
                 //点击日历选择天回调
@@ -82,17 +78,14 @@ npm install wepy-calendar --save
 ```
 
 
-
-
 | 属性/方法   | 必填    |  默认值  |备注|
 | --------   | -----   | ---- |---- |
 | currentDate | 否      |   new Date() |日历当前时间|
 | startDate    否      |   null    |日历时间选择picker最小时间|
 | endDate    | 否      |   null    |日历时间选择picker最大时间|
-| hasIconList  | 否      |   []    |日历打入天数组|
-| calChangeCurrentDate  | 否      |   (date,e)    |日历当前时间改变回调
+| hasIconList  | 否      |   []    |日历显示天数组|
+| calChangeCurrentMonth  | 否      |   (date,e)    |日历当前月份改变回调
 | calChangeSelectedDay  | 否      |   (date,e)    |声明组件之间的事件处理函数
 | this.$broadcast("startRenderCalendar");  | 是      |   ‘’    |通知组件可以开始渲染
 
-![toast](http://nowechat.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh_b4c00b84720c_258.jpg)
 
