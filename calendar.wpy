@@ -52,7 +52,12 @@
           type: Array,
           default: [],
           twoWay: true
-        }
+        },
+          moduleId:{
+            type: String,
+              default:'',
+              twoWay:true
+          }
       }
       onLoad () {
         this.setCurrentData()
@@ -103,7 +108,7 @@
               this.$apply()
             })
           }
-          this.$emit('calChangeSelectedDay', this.current.year + '-' + this.setDouble(this.current.month) + '-' + this.setDouble(index + 1), e)
+          this.$emit('calChangeSelectedDay', this.current.year + '-' + this.setDouble(this.current.month) + '-' + this.setDouble(index + 1), this.moduleId,e)
         },
         // 递增、递减切换月份
         handleCalendar(type, e) {
@@ -129,7 +134,7 @@
           this.current.year = newYear
           this.current.month = newMonth
           this.calculateEmptyGrids(newYear, newMonth)
-          this.$emit('calChangeCurrentMonth', this.current.year + '-' + this.setDouble(this.current.month), e)
+          this.$emit('calChangeCurrentMonth', this.current.year + '-' + this.setDouble(this.current.month),this.moduleId,e)
         },
         // 点击年月调用picker选择器
         bindDateChange(e) {
@@ -142,7 +147,7 @@
           } else {
             this.current.year = year
             this.current.month = month
-            this.$emit('calChangeCurrentMonth', this.current.year + '-' + this.setDouble(this.current.month), e)
+            this.$emit('calChangeCurrentMonth', this.current.year + '-' + this.setDouble(this.current.month),this.moduleId,e)
           }
         }
       }

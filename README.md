@@ -42,6 +42,7 @@
         :startDate.sync="startDate" // 日历选择器picker的最小时间 默认为3年之前
         :endDate.sync="endDate" // 日历选择器picker的最大时间 默认为3年之后
         :hasIconList.sync="hasIconList" // 日历中显示的天数数组
+        :moduleId.sync="'step1Canlendar'" // 日历组件标识，用于同一页面引用多个插件区分，单个跳过不用设置。
     ></wepyCanlendar>
 </template>
 <script>
@@ -65,11 +66,23 @@
         };  // 页面所需数据均需在这里声明，可用于模板数据绑定
         
         events = {
-              calChangeCurrentMonth:function (date,e) {
+              calChangeCurrentMonth:function (date,moduleId,e) {
                  //日历当前月份改变回调
+                 //单个用例只需用到date
+                 //多个用例是通过传回来的moduleId去判断是那个用例，从而操作不懂逻辑：
+                 //if(moduleId=='xxxx'){
+                 //     
+                 // }else{
+                 // }
               },
-              calChangeSelectedDay:function (date,e) {
-                //点击日历选择天回调
+              calChangeSelectedDay:function (date,moduleId,e) {
+                //日历当前月份改变回调
+                                 //单个用例只需用到date
+                                 //多个用例是通过传回来的moduleId去判断是那个用例，从而操作不懂逻辑：
+                                 //if(moduleId=='xxxx'){
+                                 //     
+                                 // }else{
+                                 // }
               }
             };  // 声明组件之间的事件处理函数
     }
@@ -80,6 +93,7 @@
 
 | 属性/方法   | 必填    |  默认值  |备注|
 | --------   | -----   | ---- |---- |
+| moduleId | 否      |   '' |字符串，用于多案例时区分，单案例忽略|
 | currentDate | 否      |   new Date() |日历当前时间|
 | startDate    否      |   null    |日历时间选择picker最小时间|
 | endDate    | 否      |   null    |日历时间选择picker最大时间|
