@@ -14,7 +14,10 @@
 ## 使用
 
 ### 拷贝到components里
-把 calender.wpy拷贝到组件文件夹里
+```npm install wepy-calendar --save```
+
+##引入
+``` import wepyCalendar from 'wepy-calendar'```
 ### 引入组件
 ```javascript
 // index.wpy
@@ -101,5 +104,9 @@
 | calChangeCurrentMonth  | 否      |   (date,e)    |日历当前月份改变回调
 | calChangeSelectedDay  | 否      |   (date,e)    |声明组件之间的事件处理函数
 | this.$broadcast("startRenderCalendar");  | 是      |   ‘’    |通知组件可以开始渲染
+
+
+
+[@MIT LICENSE](https://github.com/callmesoul/wepy-calendar/blob/master/LICENSE)
 
 
