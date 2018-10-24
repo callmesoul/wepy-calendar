@@ -253,9 +253,9 @@
 </script>
 <style lang="css">
     .wepy-calendar-top {
-        margin-top: 30 rpx;
-        padding: 0 30 rpx;
-        line-height: 60 rpx;
+        margin-top: 30rpx;
+        padding: 0 30rpx;
+        line-height: 60rpx;
     }
 
     .wepy-calendar-top, .wepy-calendar-weeks {
@@ -270,8 +270,8 @@
     }
 
     .wepy-calendar-top image {
-        width: 35 rpx;
-        height: 35 rpx;
+        width: 35rpx;
+        height: 35rpx;
         display: inline-block;
         vertical-align: middle;
     }
@@ -285,7 +285,7 @@
     }
 
     .wepy-calendar-date {
-        font-size: 34 rpx;
+        font-size: 34rpx;
     }
 
     .wepy-calendar-next {
@@ -304,41 +304,41 @@
     }
 
     .wepy-calendar-weeks {
-        margin: 30 rpx 0;
+        margin: 30rpx 0;
     }
 
     .wepy-calendar-week {
-        font-size: 24 rpx;
+        font-size: 24rpx;
         color: #999999;
     }
 
     .wepy-calendar-day .day {
         display: inline-block;
-        width: 60 rpx;
-        height: 60 rpx;
-        line-height: 60 rpx;
+        width: 60rpx;
+        height: 60rpx;
+        line-height: 60rpx;
         position: relative;
     }
 
     .wepy-calendar-day .day image {
-        width: 30 rpx;
-        height: 30 rpx;
+        width: 30rpx;
+        height: 30rpx;
         position: absolute;
         top: 0;
         right: 0;
-        margin-right: -15 rpx;
-        margin-top: -15 rpx;
+        margin-right: -15rpx;
+        margin-top: -15rpx;
     }
 
     .wepy-calendar-day .today {
         border-radius: 50%;
         background: #fedf54;
-        box-shadow: 0 0 10 rpx rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
     }
 
     .wepy-calendar-day .selected {
         border-radius: 50%;
         background: #50bf2c;
-        box-shadow: 0 0 10 rpx rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
     }
 </style>
