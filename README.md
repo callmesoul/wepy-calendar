@@ -22,59 +22,59 @@
 ```javascript
 // index.wpy
 <template>
-    <wepyCanlendar></wepyCanlendar>
+    <wepyCalendar></wepyCalendar>
 </template>
 <script>
     import wepy from 'wepy';
-    import wepyCanlendar from '@/components/calendar'
+    import wepyCalendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
-            wepyCanlendar
+            wepyCalendar
         };
     }
-    
+
 </script>
 ```
 ### 自定义参数
 ```javascript
 // index.wpy
 <template>
-    <wepyCanlendar 
+    <wepyCalendar
         :currentDate.sync="currentDate" // 日历当前时间 默认为今天
         :startDate.sync="startDate" // 日历选择器picker的最小时间 默认为3年之前
         :endDate.sync="endDate" // 日历选择器picker的最大时间 默认为3年之后
         :hasIconList.sync="hasIconList" // 日历中显示的天数数组
-        :moduleId.sync="'step1Canlendar'" // 日历组件标识，用于同一页面引用多个插件区分，单个跳过不用设置。
-    ></wepyCanlendar>
+        :moduleId.sync="'step1Calendar'" // 日历组件标识，用于同一页面引用多个插件区分，单个跳过不用设置。
+    ></wepyCalendar>
 </template>
 <script>
     import wepy from 'wepy'
-    import wepyCanlendar from '@/components/calendar'
+    import wepyCalendar from '@/components/calendar'
 
     export default class Index extends wepy.page {
         components = {
-            wepyCanlendar
+            wepyCalendar
         };
-        
+
         onLoad(){
             this.$broadcast("startRenderCalendar");//通知日历组件可以开始渲染
         }
-        
+
         data = {
               currentDate: "2018-08-09",
               startDate: '2018-01-01',
               endDate: '2018-02-01',
               hasIconList:[ '2018-06-01', '2018-06-06', '2018-06-09', '2018-06-10', '2018-06-15' ]
         };  // 页面所需数据均需在这里声明，可用于模板数据绑定
-        
+
         events = {
               calChangeCurrentMonth:function (date,moduleId,e) {
                  //日历当前月份改变回调
                  //单个用例只需用到date
                  //多个用例是通过传回来的moduleId去判断是那个用例，从而操作不懂逻辑：
                  //if(moduleId=='xxxx'){
-                 //     
+                 //
                  // }else{
                  // }
               },
@@ -83,13 +83,13 @@
                                  //单个用例只需用到date
                                  //多个用例是通过传回来的moduleId去判断是那个用例，从而操作不懂逻辑：
                                  //if(moduleId=='xxxx'){
-                                 //     
+                                 //
                                  // }else{
                                  // }
               }
             };  // 声明组件之间的事件处理函数
     }
-    
+
 </script>
 ```
 
